@@ -9,5 +9,8 @@ segundo_numero = int(input("Ingrese el segundo numero para almacenarlo en la var
 
 suma = primer_numero + segundo_numero
 
-print("El resultado de la seuma d elos numero es:", suma)
+numero_divisible = int(input("Ingrese el numero a dividir:"))
+
+# Impresión de variables donde se evidencian los resultados de las operaciones
+print("El resultado de la suma de los numero mas la division", numero_divisible, " :", suma/numero_divisible)
 
