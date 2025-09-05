@@ -65,5 +65,5 @@ finally:
     print("Ejecucion finalizada")
     
 ## Modularidad
-import math as m
+import math as m  # noqa: E402
 raiz_cuadrada = m.sqrt(16)
