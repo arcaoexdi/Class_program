@@ -53,7 +53,7 @@ def saludar(nombre):
 def parametros(nombre="Mundo"):
     return f"Hola, {nombre}"
 
-def retorno(objeto)
+def retorno(objeto):
     return print(objeto)
 
 ## MAnejo de errores
@@ -65,5 +65,5 @@ finally:
     print("Ejecucion finalizada")
     
 ## Modularidad
-import math
-raiz_cuadrada = math.sqrt(16)
+import math as m
+raiz_cuadrada = m.sqrt(16)
