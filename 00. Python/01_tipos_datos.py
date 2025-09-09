@@ -3,73 +3,104 @@
 # Tipos de datos basicos
 
 # Entero
-entero = int(11)
-print("Este es un dato entero ", entero)
+entero = input("Ingresa un numero entero sin punto: ")
+entero = int(entero)
+print("Este es un dato entero sin punto: ", entero)
 
 # Flotante
-flotante = float(105)    
-print("Este es un dato flotante ",flotante)
+flotante = input("Ingresa un numero flotante con punto, no con coma: ")
+flotante = float(flotante)
+print("Este es un dato flotante: ", flotante, "con punto decimal")
 
 # Cadena de texto
-cadena = str("Por ende es un String")
-print("Este es un dato tipo cadena, ",cadena)
+cadena = input("Ingresa una cadena de texto: ")
+cadena = str(cadena)
+print("Este es un dato tipo cadena: ", cadena)
 
 # Booleano
-booleano = bool(False)     
-print("Este es un dato tipo booleano, por ende, es verdadero o: ",booleano)
+booleano = bool(False)
+if booleano is True:
+    print("El dato booleano es verdadero")
+else:
+    print("El dato booleano es falso")
+
 
 # Lista
-listas = list([1, 2, 3])  
-print("Este es un dato tipo lista ",listas)
+# Paso 1: Pedir al usuario datos separados por espacios
+entrada = input("Ingresa varios datos separados por espacios: ")
+
+# Paso 2: Convertir la entrada en una lista
+listas = entrada.split()
+
+# Paso 3: Mostrar la lista inicial
+print("Este es un dato tipo lista:", listas)
+
+# Paso 4: Permitir agregar más elementos
+nuevo_dato = input(
+    "¿Quieres agregar otro dato? Escribe uno o varios separados por espacios: "
+)
+listas += nuevo_dato.split()
+
+# Paso 5: Mostrar la lista actualizada
+print("Lista actualizada:", listas)
+
 
 # Diccionario
-dictado = dict(a=1, b=2)  
-print("Este es un dato tipo dictado, el cual da como resultado la siguiente expresion ",dictado)
+a = "God morning"
+b = "Good night"
+c = "Good afternoon"
+dictado = dict(a=a, b=b, c=c)
+print(
+    "Este es un dato tipo dictado, el cual da como resultado la siguiente expresion: ",
+    dictado,
+)
+
 
 # Tupla
-tupla = tuple(('simpres', "dobles", "numero en comillas: 3", flotante, entero))  
-print("Este es un dato tipo tupla ", tupla)
+tupla = tuple(("simpres", "dobles", "numero en comillas: 3", flotante, entero))
+print("Este es un dato tipo tupla entre parentesis", tupla)
 
 # Conjunto
-conjunto = set([1, entero, "Hola mundo"]) 
-print("Este es un dato tipo conjunto ",conjunto)
+conjunto = set([1, entero, "Hola mundo"])
+print("Este es un dato tipo conjunto donde esta encerrado en llaves ", conjunto)
 
 
-# Operadores: Aritmeticos(+, -, *, /), logicos (and, or, not), de comparacion (==, !=, >, <)
+# Operadores: Aritmeticos(+, -, *, /)
+# logicos (and, or, not), de comparacion (==, !=, >, <)
 suma = 5 + 3
-print("Este es el resultado de la suma ",suma)
+print("Este es el resultado de la suma ", suma)
 
 resta = 5 - 7
-print("Este es el resultado de la resta ",resta)
+print("Este es el resultado de la resta ", resta)
 
 multiplicacion = 5 * 3
-print("Este es el resultado de la multiplicacion ",multiplicacion)
+print("Este es el resultado de la multiplicacion ", multiplicacion)
 
 division = 5 / 3
-print("Este es el resultado de la division ",division)  
+print("Este es el resultado de la division ", division)
 
 ## Logicos
 Y = suma and resta
-print("Este es el resultado del operador AND ",Y)
+print("Este es el resultado del operador AND ", Y)
 
 o = suma or resta
-print("Este es el resultado del operador OR ",o)
+print("Este es el resultado del operador OR ", o)
 
 NO = not resta
-print("Este es el resultado del operador NOT ",NO)
+print("Este es el resultado del operador NOT ", NO)
 
 ## Comparacion
-igual = (suma == resta)
-print("Este es el resultado del operador de comparacion igual ",igual)
+igual = suma == resta
+print("Este es el resultado del operador de comparacion igual ", igual)
 
-diferente = (suma != resta)
-print("Este es el resultado del operador de comparacion diferente ",diferente)
+diferente = suma != resta
+print("Este es el resultado del operador de comparacion diferente ", diferente)
 
-mayor = (suma > resta)
-print("Este es el resultado del operador de comparacion mayor ",mayor)
+mayor = suma > resta
+print("Este es el resultado del operador de comparacion mayor ", mayor)
 
-menor = (suma < resta)
-print("Este es el resultado del operador de comparacion menor ",menor)
+menor = suma < resta
+print("Este es el resultado del operador de comparacion menor ", menor)
 
 ## Condicionales
 # IF - ELSE - ELIF
@@ -82,11 +113,11 @@ elif suma < resta:
 else:
     resultado3 = "Son iguales"
     print("Si son iguales, imprime esto", resultado3)
-    
+
 ## Bucles
 # FOR
 for i in range(5):
-    print("Iteracion sobre el numero 5: ",i)
+    print("Iteracion sobre el numero 5: ", i)
 
 # WHILE
 contador = 0
@@ -97,22 +128,25 @@ while contador < 5:
         print("Contador ha llegado a 5, saliendo del bucle")
         break
 
+
 ## Funciones
 def saludar(nombre):
     print("Saludando a:", nombre)
     return f"Hola, {nombre}"
+
 
 ### Uso de la funcion Saludar
 saludo = saludar(input("Ingrese su nombre: "))
 print(saludo)
 
 
-
 def parametros(nombre="Mundo"):
     return f"Hola, {nombre}"
 
+
 def retorno(objeto):
     return print(objeto)
+
 
 ## MAnejo de errores
 try:
@@ -121,7 +155,8 @@ except ZeroDivisionError:
     resultado = "Error: Division por cero"
 finally:
     print("Ejecucion finalizada")
-    
+
 ## Modularidad
 import math as m  # noqa: E402
+
 raiz_cuadrada = m.sqrt(16)
